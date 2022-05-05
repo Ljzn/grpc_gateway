@@ -46,3 +46,4 @@ jobs:
         run: |
           cat /var/log/nginx/access.log
           cat /var/log/nginx/error.log
+          cat /var/log/nginx/grpc_log.json
