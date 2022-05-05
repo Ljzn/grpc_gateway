@@ -19,7 +19,7 @@ defmodule GrpcGatewayTest do
 
     {:ok, channel} = GRPC.Stub.connect("localhost:4000", headers: [{"x-token", token}])
     request = Helloworld.HelloRequest.new!(name: "John")
-    {:ok, reply} = Helloworld.Greeter.Stub.say_hello(channel, request)
+    Helloworld.Greeter.Stub.say_hello(channel, request) |> IO.inspect()
     GRPC.Stub.disconnect(channel)
   end
 end
