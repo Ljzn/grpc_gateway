@@ -35,8 +35,8 @@ jobs:
 
       - name: Move certs
         run: |
-          mv ./priv/localhost.crt /etc/ssl/certs
-          mv ./priv/localhost.key /etc/ssl/certs
+          sudo mv ./priv/localhost.crt /etc/ssl/certs
+          sudo mv ./priv/localhost.key /etc/ssl/certs
 
       - name: Install nginx
         run: |
