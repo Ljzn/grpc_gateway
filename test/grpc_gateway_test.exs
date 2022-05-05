@@ -2,7 +2,7 @@ defmodule GrpcGatewayTest do
   use ExUnit.Case
 
   test "greets the world" do
-    token = "Bearer TOKEN"
+    token = "TOKEN"
 
     # check nginx status
     System.cmd("systemctl", ["status", "nginx"])
