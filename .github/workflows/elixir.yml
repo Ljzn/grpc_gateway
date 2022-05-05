@@ -33,4 +33,9 @@ jobs:
       - run: mix format --check-formatted --dry-run
       - run: MIX_ENV=test mix compile --force --warnings-as-errors
 
+      - name: Install nginx
+        run: |
+          sudo apt update
+          sudo apt install nginx
+
       - run: MIX_ENV=test mix test
