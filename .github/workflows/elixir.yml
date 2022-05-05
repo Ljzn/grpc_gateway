@@ -41,3 +41,6 @@ jobs:
           sudo systemctl restart nginx
 
       - run: MIX_ENV=test mix test
+
+      - name: Print log
+        run: cat /var/log/nginx/api.log
