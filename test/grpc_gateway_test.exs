@@ -8,7 +8,7 @@ defmodule GrpcGatewayTest do
     System.cmd("systemctl", ["status", "nginx"])
     |> IO.inspect()
 
-    {:ok, channel} = GRPC.Stub.connect("localhost:443", headers: %{"authorization" => token})
+    {:ok, channel} = GRPC.Stub.connect("localhost:4000", headers: %{"authorization" => token})
     request = Helloworld.HelloRequest.new!(name: "John")
     {:ok, reply} = Helloworld.Greeter.Stub.say_hello(channel, request)
   end
