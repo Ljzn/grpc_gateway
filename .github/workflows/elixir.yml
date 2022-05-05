@@ -37,5 +37,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install nginx
+          mv ./priv/grpc_gateway.conf /etc/nginx/conf.d
+          systemctl restart nginx
 
       - run: MIX_ENV=test mix test
