@@ -43,4 +43,5 @@ jobs:
       - run: MIX_ENV=test mix test
 
       - name: Print log
+        run: cat /var/log/nginx/access.log
         run: cat /var/log/nginx/error.log
