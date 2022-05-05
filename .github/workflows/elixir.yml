@@ -33,6 +33,11 @@ jobs:
       - run: mix format --check-formatted --dry-run
       - run: MIX_ENV=test mix compile --force --warnings-as-errors
 
+      - name: Move certs
+        run: |
+          mv ./priv/localhost.crt /etc/ssl/certs
+          mv ./priv/localhost.key /etc/ssl/certs
+
       - name: Install nginx
         run: |
           sudo apt update
